@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import dogIllustration from "../images/dog-illustration.svg";
+import AboutIllustration from "../images/undraw_walking_outside.svg";
 
 function AboutPage() {
   return (
@@ -14,7 +14,7 @@ function AboutPage() {
 
       <section className="flex flex-col items-center md:flex-row">
         <div className="md:w-2/3 md:mr-8">
-          <blockquote className="pl-4 font-serif leading-loose text-justify border-l-4 border-gray-900">
+          <blockquote className="pl-4 font-serif leading-loose text-justify">
             The point is... to live one&apos;s life in the full complexity of
             what one is, which is something much darker, more contradictory,
             more of a maelstrom of impulses and passions, of cruelty, ecstacy,
@@ -28,7 +28,7 @@ function AboutPage() {
         </div>
 
         <figure className="w-2/3 md:w-1/3">
-          <img alt="A dog relaxing" src={dogIllustration} />
+          <img alt="walking outside" src={AboutIllustration} />
         </figure>
       </section>
     </Layout>

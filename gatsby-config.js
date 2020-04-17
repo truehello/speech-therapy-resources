@@ -1,3 +1,8 @@
+// Load the environment variables.
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
 
@@ -5,13 +10,19 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`,
+    title: `Speech Therapy Resources`,
+    description: `Where Speech-Language Pathologists Go for Answers`,
+    author: `@marctrudel`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

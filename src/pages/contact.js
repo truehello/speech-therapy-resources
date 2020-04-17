@@ -7,23 +7,14 @@ function ContactPage() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[`contact`, `speech`, `therapy`, `resources`]}
         title="Contact"
       />
-      <section>
-        <form className="mx-auto md:w-1/2">
+      <section className="w-full px-12">
+        <form className="">
           <p className="mb-8 leading-loose">
-            Here is an example of a form built using the official Tailwind CSS
-            Custom Forms plugin.{` `}
-            <a
-              className="font-bold text-gray-700 no-underline"
-              href="https://github.com/tailwindcss/custom-forms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the docs
-            </a>
-            .
+            Any Questions. Get In Touch.
+            
           </p>
 
           <label

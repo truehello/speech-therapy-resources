@@ -2,42 +2,22 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import catAndHumanIllustration from "../images/cat-and-human-illustration.svg";
+import HomeHero from "../components/homepage/hero";
+import FeatureSection from "../components/homepage/featureSection";
+import HomeLinkSection from "../components/homepage/homeLinksSection";
 
-function IndexPage() {
-  return (
-    <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Home"
-      />
+const IndexPage = () => (
+  <Layout>
+    <SEO
+      keywords={[`speech`, `therapy`, `resources`, `Jeanette`, `Alexander`]}
+      title="Home"
+    />
 
-      <section className="text-center">
-        <img
-          alt="Cat and human sitting on a couch"
-          className="block w-1/2 mx-auto mb-8"
-          src={catAndHumanIllustration}
-        />
+    <HomeHero />
+    <HomeLinkSection />
 
-        <h2 className="inline-block p-3 mb-4 text-2xl font-bold bg-yellow-400">
-          Hey there! Welcome to your first Gatsby site.
-        </h2>
-
-        <p className="leading-loose">
-          This is a barebones starter for Gatsby styled using{` `}
-          <a
-            className="font-bold text-gray-900 no-underline"
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , a utility-first CSS framework.
-        </p>
-      </section>
-    </Layout>
-  );
-}
+    <FeatureSection />
+  </Layout>
+);
 
 export default IndexPage;
