@@ -2,7 +2,7 @@
 title: Increasing Sentence Length
 slug: sentence-length
 snippet: Find out how to increase a child’s mean length of utterance.
-featuredImgUrl: https://unsplash.it/302?random
+featuredImgUrl: https://unsplash.it/1302?random
 featuredImgAlt: Increasing Sentence Length Image
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

@@ -3,7 +3,7 @@ title: Free Therapy Materials
 slug: free-resources
 snippet: Download and print free therapy games, flashcards, and materials here!
 keywords: speech, therapy, free, resources, exercises
-featuredImgUrl: https://unsplash.it/300?random
+featuredImgUrl: https://unsplash.it/1300?random
 featuredImgAlt: Free Therapy Materials
 ---
 

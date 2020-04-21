@@ -2,7 +2,7 @@
 title: Vocabulary Page
 slug: "vocabulary"
 snippet: Check out these activities for improving vocabulary.
-featuredImgUrl: https://unsplash.it/305?random
+featuredImgUrl: https://unsplash.it/1305?random
 featuredImgAlt: Vocabulary Image
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

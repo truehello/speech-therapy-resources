@@ -2,7 +2,7 @@
 title: Receptive Language Resources
 slug: receptive-language
 snippet: Find activities and guides for doing therapy with children who have receptive language delays.
-featuredImgUrl: https://unsplash.it/301?random
+featuredImgUrl: https://unsplash.it/1301?random
 featuredImgAlt: Receptive Language Resources Image
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

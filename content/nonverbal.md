@@ -2,7 +2,7 @@
 title: Nonverbal Children
 slug: nonverbal-children
 snippet: Need helping figuring out what to do for your nonverbal children?
-featuredImgUrl: https://unsplash.it/303?random
+featuredImgUrl: https://unsplash.it/1303?random
 featuredImgAlt:  Nonverbal Children Image
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

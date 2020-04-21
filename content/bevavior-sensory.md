@@ -2,7 +2,7 @@
 title: Behavior and Sensory Page
 slug: behavior-sensory
 snippet: See what can be done to help students who have sensory or behavior problems.
-featuredImgUrl: https://unsplash.it/304?random
+featuredImgUrl: https://unsplash.it/1304?random
 featuredImgAlt: Behavior and Sensory
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

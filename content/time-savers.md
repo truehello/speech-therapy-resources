@@ -2,7 +2,7 @@
 title: Time Savers for Speech Therapists
 slug: time-savers
 snippet: Learn how to organize yourself and save time on the tasks you do every day.
-featuredImgUrl: https://unsplash.it/305?random
+featuredImgUrl: https://unsplash.it/1305?random
 featuredImgAlt: Time Savers for Speech Therapists Image
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

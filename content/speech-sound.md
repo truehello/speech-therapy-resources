@@ -2,7 +2,7 @@
 title: Speech Sound Resources
 slug: speech-sound
 snippet: Help for children who have trouble with articulation or phonology.
-featuredImgUrl: https://unsplash.it/299?random
+featuredImgUrl: https://unsplash.it/1299?random
 featuredImgAlt: Speech Sound Resources
 keywords: vocabulary, exercises, speech, therapy, resources
 ---
