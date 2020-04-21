@@ -1,5 +1,15 @@
-/*! purgecss start ignore */
+
 @tailwind base;
+
 @tailwind components;
-/*! purgecss end ignore */
+
+.dangerousHTML h1{
+    @apply text-3xl tracking-tight leading-10 font-extrabold
+}
+.dangerousHTML h2{
+    @apply mt-2 text-2xl leading-8 font-extrabold tracking-tight text-gray-700
+}
+.dangerousHTML p{
+    @apply py-4 text-base text-gray-500
+}
 @tailwind utilities;

@@ -18,6 +18,17 @@ module.exports = {
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content/`,
+        //ignore: [`**.md`], // ignore markdown files
+      },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
         endpoint: process.env.MAILCHIMP_ENDPOINT,

@@ -1,7 +1,41 @@
 import React from "react";
-import { Link } from "gatsby"
+
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 
 const homeLinksSection = () => {
+  const data = useStaticQuery(graphql`
+    query MaterialsQuery {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              slug
+              title
+              snippet
+              featuredImgUrl
+              featuredImgAlt
+            }
+            id
+            featuredImg {
+              childImageSharp {
+                fluid(
+                  duotone: { highlight: "#3c366b", shadow: "#a3bffa" }
+                  maxWidth: 400
+                ) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data.allMarkdownRemark.edges[0].node.featuredImg.childImageSharp.fluid.src);
+  console.log(data.allMarkdownRemark.edges[0].node.frontmatter.featuredImgAlt)
+
   return (
     <section className="pb-12">
       <div className="lg:text-center pb-6">
@@ -16,187 +50,39 @@ const homeLinksSection = () => {
       </div>
 
       <div className="grid grid-cols-3">
-        <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/308?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl  font-black leading-tight">
-            Free Therapy Materials
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Download and print free therapy games, flashcards, and materials
-            here!
-          </h4>
+        {data.allMarkdownRemark.edges.map((edge) => (
+          <Link
+            key={edge.node.id}
+            to={`/materials/${edge.node.frontmatter.slug}`}
+            className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300"
+          >
+            {/* <img
+              className="absolute object-cover top-0 left-0 w-full h-full"
+              src={edge.node.frontmatter.featuredImgUrl}
+              alt="random image name"
+            /> */}
 
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
+             <Img
+              fluid={edge.node.featuredImg.childImageSharp.fluid}
+              alt={edge.node.frontmatter.featuredImgAlt}
+              className="absolute object-cover top-0 left-0 w-full h-full"
+              style={{position: "absolute"}}
+            />
+
+            <h3 className="relative text-white text-2xl  font-black leading-tight">
+              {edge.node.frontmatter.title}
+            </h3>
+            <h4 className="relative text-white text-lg fontbold leading-tight">
+              {edge.node.frontmatter.snippet}
+            </h4>
+
+            <div className="card_bottom relative flex justify-end text-white">
+              <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
+                Learn More
+              </div>
             </div>
-          </div>
-        </Link>
-
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/305?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Time Savers for Speech Therapists
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Learn how to organize yourself and save time on the tasks you do
-            every day.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/297?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Vocabulary Page
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Check out these activities for improving vocabulary.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/306?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl  font-black leading-tight">
-            Behavior and Sensory Page
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            See what can be done to help students who have sensory or behavior
-            problems.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/301?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Receptive Language Resources
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Find activities and guides for doing therapy with children who have
-            receptive language delays.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/299?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Speech Sound Resources
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Help for children who have trouble with articulation or phonology.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/304?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Behavior and Sensory Page
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            See what can be done to help students who have sensory or behavior
-            problems.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/303?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Nonverbal Children
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Need helping figuring out what to do for your nonverbal children?
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
-         <Link to="/about" className="flex flex-col justify-between p-6 rounded-md h-64 max-w-md relative overflow-hidden m-4 shadow-md hover:shadow-xl bg-gray-500 transition-shadow duration-300">
-          <img
-            className="absolute object-cover top-0 left-0 w-full h-full"
-            src="https://unsplash.it/302?random"
-            alt="random image name"
-          />
-          <h3 className="relative text-white text-2xl font-black leading-tight">
-            Increasing Sentence Length
-          </h3>
-          <h4 className="relative text-white text-lg fontbold leading-tight">
-            Find out how to increase a child’s mean length of utterance.
-          </h4>
-
-          <div className="card_bottom relative flex justify-end text-white">
-            <div className="flex items-center justify-center px-2 py-1 border border-transparent text-sm font-semibold rounded-md text-indigo-700 bg-indigo-100 focus:outline-none focus:shadow-outline focus:border-indigo-300">
-              Learn More
-            </div>
-          </div>
-        </Link>
+          </Link>
+        ))}
       </div>
     </section>
   );
