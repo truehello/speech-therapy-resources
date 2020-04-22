@@ -2,7 +2,7 @@
 title: General Resources
 slug: general
 snippet: Are you new to the world of speech therapy? Check out these general resources to get you started.
-featuredImgUrl: https://unsplash.it/1304?random
+featuredImgUrl: https://unsplash.it/1313?random
 featuredImgAlt: General speech therapy resources
 keywords: vocabulary, exercises, speech, therapy, resources
 ---

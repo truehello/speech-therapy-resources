@@ -20,8 +20,9 @@ const homeLinksSection = () => {
             featuredImg {
               childImageSharp {
                 fluid(
-                  duotone: { highlight: "#3c366b", shadow: "#a3bffa" }
+                  duotone: { highlight: "#3c366b", shadow: "#c3dafe", opacity: 75 }
                   maxWidth: 400
+                  cropFocus: ATTENTION
                 ) {
                   ...GatsbyImageSharpFluid
                 }
